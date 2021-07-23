@@ -1,15 +1,16 @@
 object MainForm: TMainForm
   Left = 362
-  Height = 402
+  Height = 603
   Top = 227
-  Width = 937
+  Width = 1406
   Caption = 'Unbound Bible'
-  ClientHeight = 382
-  ClientWidth = 937
-  Constraints.MinHeight = 400
-  Constraints.MinWidth = 600
+  ClientHeight = 573
+  ClientWidth = 1406
+  Constraints.MinHeight = 600
+  Constraints.MinWidth = 900
+  DesignTimePPI = 144
   Font.Color = clBlack
-  Font.Height = -16
+  Font.Height = -24
   Font.Name = 'Tahoma'
   Font.Pitch = fpVariable
   Font.Quality = fqDraft
@@ -20,33 +21,39 @@ object MainForm: TMainForm
   OnDestroy = FormDestroy
   OnPaint = FormPaint
   OnShow = FormShow
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.12.0'
   object StandardToolBar: TToolBar
     Left = 0
-    Height = 30
+    Height = 44
     Top = 0
-    Width = 937
+    Width = 1406
     AutoSize = True
     BorderWidth = 2
-    ButtonHeight = 28
-    ButtonWidth = 28
+    ButtonHeight = 42
+    ButtonWidth = 42
     EdgeBorders = [ebBottom]
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     Images = Images
     Indent = 4
     ParentColor = False
+    ParentFont = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
     Wrapable = False
     object ToolSeparator2: TToolButton
-      Left = 266
-      Height = 28
+      Left = 398
+      Height = 42
       Top = 0
       Caption = 'ToolSeparator2'
       Style = tbsDivider
     end
     object ToolButtonNew: TToolButton
-      Left = 154
+      Left = 230
       Top = 0
       HelpType = htKeyword
       Action = ActionFileNew
@@ -54,69 +61,69 @@ object MainForm: TMainForm
       ShowCaption = False
     end
     object ToolButtonOpen: TToolButton
-      Left = 182
+      Left = 272
       Top = 0
       Action = ActionFileOpen
       Enabled = False
     end
     object ToolButtonSave: TToolButton
-      Left = 210
+      Left = 314
       Top = 0
       Action = ActionFileSave
       Enabled = False
     end
     object ToolButtonPrint: TToolButton
-      Left = 238
+      Left = 356
       Top = 0
       Action = ActionFilePrint
       Enabled = False
       Visible = False
     end
     object ToolSeparator3: TToolButton
-      Left = 149
-      Height = 28
+      Left = 222
+      Height = 42
       Top = 0
       ImageIndex = 3
       Style = tbsDivider
     end
     object ToolButtonCut: TToolButton
-      Left = 271
+      Left = 406
       Top = 0
       Action = ActionEditCut
     end
     object ToolButtonCopy: TToolButton
-      Left = 299
+      Left = 448
       Top = 0
       Action = ActionEditCopy
     end
     object ToolButtonPaste: TToolButton
-      Left = 355
+      Left = 532
       Top = 0
       Action = ActionEditPaste
     end
     object ToolButtonUndo: TToolButton
-      Left = 383
+      Left = 574
       Top = 0
       Action = ActionEditUndo
     end
     object ToolSeparator5: TToolButton
-      Left = 556
-      Height = 28
+      Left = 834
+      Height = 42
       Top = 0
       Caption = 'ToolSeparator5'
       ImageIndex = 15
       Style = tbsDivider
     end
     object ToolButtonFavorites: TToolButton
-      Left = 37
+      Left = 54
       Top = 0
       Action = ActionCompare
       ParentShowHint = False
       ShowHint = True
     end
     object ToolSeparator6: TToolButton
-      Left = 645
-      Height = 28
+      Left = 968
+      Height = 42
       Top = 0
       Caption = 'ToolSeparator6'
       Grouped = True
@@ -124,31 +131,31 @@ object MainForm: TMainForm
       Style = tbsDivider
     end
     object ToolButtonBold: TToolButton
-      Left = 444
+      Left = 666
       Top = 0
       Action = ActionBold
       Style = tbsCheck
     end
     object ToolButtonItalic: TToolButton
-      Left = 472
+      Left = 708
       Top = 0
       Action = ActionItalic
       Style = tbsCheck
     end
     object ToolButtonUnderline: TToolButton
-      Left = 500
+      Left = 750
       Top = 0
       Action = ActionUnderline
       Style = tbsCheck
     end
     object ToolButtonLink: TToolButton
-      Left = 528
+      Left = 792
       Top = 0
       Action = ActionLink
       Style = tbsCheck
     end
     object ToolButtonLeft: TToolButton
-      Left = 561
+      Left = 842
       Top = 0
       Action = ActionLeft
       Grouped = True
@@ -156,7 +163,7 @@ object MainForm: TMainForm
     end
     object ToolButtonCenter: TToolButton
       Tag = 2
-      Left = 589
+      Left = 884
       Top = 0
       Action = ActionCenter
       Grouped = True
@@ -164,38 +171,38 @@ object MainForm: TMainForm
     end
     object ToolButtonRight: TToolButton
       Tag = 1
-      Left = 617
+      Left = 926
       Top = 0
       Action = ActionRight
       Grouped = True
       Style = tbsCheck
     end
     object ToolButtonBullets: TToolButton
-      Left = 650
+      Left = 976
       Top = 0
       Action = ActionBullets
       Style = tbsCheck
     end
     object ToolButtonFont: TToolButton
-      Left = 416
+      Left = 624
       Top = 0
       Action = ActionFont
     end
     object ToolButtonVerses: TToolButton
-      Left = 327
+      Left = 490
       Top = 0
       Action = ActionCopyVerses
       ParentShowHint = False
       ShowHint = True
     end
     object ToolSeparator4: TToolButton
-      Left = 411
-      Height = 28
+      Left = 616
+      Height = 42
       Top = 0
       Style = tbsDivider
     end
     object ToolButtonCommentary: TToolButton
-      Left = 93
+      Left = 138
       Top = 0
       Action = ActionCommentaries
     end
@@ -206,22 +213,28 @@ object MainForm: TMainForm
       Visible = False
     end
     object ToolButtonDictionary: TToolButton
-      Left = 121
+      Left = 180
       Top = 0
       Action = ActionDictionaries
     end
     object ToolPanel: TPanel
-      Left = 678
-      Height = 28
+      Left = 1018
+      Height = 42
       Top = 0
-      Width = 226
+      Width = 339
       BevelOuter = bvNone
       Color = clWindow
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
       ParentColor = False
+      ParentFont = False
       TabOrder = 0
     end
     object ToolButtonSearch: TToolButton
-      Left = 904
+      Left = 1357
       Hint = 'Search'
       Top = 0
       Caption = 'Search...'
@@ -229,14 +242,14 @@ object MainForm: TMainForm
       OnClick = ToolButtonSearchClick
     end
     object ToolButtonReference: TToolButton
-      Left = 65
+      Left = 96
       Hint = 'Сross References'
       Top = 0
       Action = ActionReference
     end
     object ToolSeparator1: TToolButton
-      Left = 32
-      Height = 28
+      Left = 46
+      Height = 42
       Top = 0
       Caption = 'ToolSeparator'
       Style = tbsDivider
@@ -245,25 +258,31 @@ object MainForm: TMainForm
   end
   object PanelLeft: TPanel
     Left = 0
-    Height = 327
-    Top = 32
-    Width = 195
+    Height = 490
+    Top = 47
+    Width = 292
     Align = alLeft
-    ClientHeight = 327
-    ClientWidth = 195
+    ClientHeight = 490
+    ClientWidth = 292
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 1
     object ComboBox: TComboBox
-      Left = 5
-      Height = 25
+      Left = 7
+      Height = 36
       Top = 1
-      Width = 185
+      Width = 278
       Align = alTop
-      BorderSpacing.Left = 4
-      BorderSpacing.Right = 4
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
       DropDownCount = 12
       Font.Color = clWindowText
-      Font.Height = -13
-      ItemHeight = 17
+      Font.Height = -20
+      ItemHeight = 28
       OnChange = ComboBoxChange
       OnDrawItem = ComboBoxDrawItem
       ParentFont = False
@@ -271,74 +290,86 @@ object MainForm: TMainForm
       TabOrder = 2
     end
     object BookBox: TListBox
-      Left = 5
-      Height = 292
-      Top = 30
-      Width = 136
+      Left = 7
+      Height = 440
+      Top = 43
+      Width = 204
       Align = alClient
-      BorderSpacing.Left = 4
-      BorderSpacing.Top = 4
-      BorderSpacing.Right = 4
-      BorderSpacing.Bottom = 4
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      BorderSpacing.Bottom = 6
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
       ItemHeight = 0
       OnClick = BookBoxClick
+      ParentFont = False
       ScrollWidth = 132
       TabOrder = 0
     end
     object ChapterBox: TListBox
-      Left = 145
-      Height = 292
-      Top = 30
-      Width = 45
+      Left = 217
+      Height = 440
+      Top = 43
+      Width = 68
       Align = alRight
-      BorderSpacing.Top = 4
-      BorderSpacing.Right = 4
-      BorderSpacing.Bottom = 4
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      BorderSpacing.Bottom = 6
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
       ItemHeight = 0
       OnClick = ChapterBoxClick
+      ParentFont = False
       ScrollWidth = 43
       TabOrder = 1
     end
   end
   object StatusBar: TStatusBar
     Left = 0
-    Height = 23
-    Top = 359
-    Width = 937
+    Height = 36
+    Top = 537
+    Width = 1406
     Panels = <>
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
   end
   object PageControl: TPageControl
-    Left = 200
-    Height = 327
-    Top = 32
-    Width = 737
+    Left = 300
+    Height = 490
+    Top = 47
+    Width = 1106
     ActivePage = TabSheetBible
     Align = alClient
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -20
     ParentFont = False
     TabIndex = 0
     TabOrder = 2
     OnChange = PageControlChange
     object TabSheetBible: TTabSheet
       Caption = 'Bible'
-      ClientHeight = 297
-      ClientWidth = 729
+      ClientHeight = 449
+      ClientWidth = 1098
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -18
       ParentFont = False
       object MemoBible: TUnboundMemo
         Cursor = crArrow
         Left = 0
-        Height = 297
+        Height = 449
         Top = 0
-        Width = 729
+        Width = 1098
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -358,7 +389,10 @@ object MainForm: TMainForm
       Caption = 'Search'
       ClientHeight = 297
       ClientWidth = 729
+      Font.Color = clWindowText
+      Font.Height = -20
       ImageIndex = 1
+      ParentFont = False
       object MemoSearch: TUnboundMemo
         Cursor = crArrow
         Left = 0
@@ -367,7 +401,7 @@ object MainForm: TMainForm
         Width = 729
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -387,7 +421,7 @@ object MainForm: TMainForm
       ClientHeight = 298
       ClientWidth = 727
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -18
       ImageIndex = 3
       ParentFont = False
       object MemoCompare: TUnboundMemo
@@ -398,7 +432,7 @@ object MainForm: TMainForm
         Width = 675
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -417,6 +451,9 @@ object MainForm: TMainForm
       Caption = 'Сross-References'
       ClientHeight = 298
       ClientWidth = 727
+      Font.Color = clWindowText
+      Font.Height = -20
+      ParentFont = False
       object MemoReference: TUnboundMemo
         Cursor = crArrow
         Left = 0
@@ -425,7 +462,7 @@ object MainForm: TMainForm
         Width = 729
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -444,6 +481,9 @@ object MainForm: TMainForm
       Caption = 'Commentaries'
       ClientHeight = 298
       ClientWidth = 727
+      Font.Color = clWindowText
+      Font.Height = -20
+      ParentFont = False
       object MemoCommentary: TUnboundMemo
         Cursor = crArrow
         Left = 0
@@ -452,7 +492,7 @@ object MainForm: TMainForm
         Width = 729
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -471,6 +511,9 @@ object MainForm: TMainForm
       Caption = 'Dictionaries'
       ClientHeight = 298
       ClientWidth = 727
+      Font.Color = clWindowText
+      Font.Height = -20
+      ParentFont = False
       object MemoDictionary: TUnboundMemo
         Cursor = crArrow
         Left = 0
@@ -479,7 +522,7 @@ object MainForm: TMainForm
         Width = 729
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -498,7 +541,10 @@ object MainForm: TMainForm
       Caption = 'Notes'
       ClientHeight = 298
       ClientWidth = 727
+      Font.Color = clWindowText
+      Font.Height = -20
       ImageIndex = 2
+      ParentFont = False
       object MemoNotes: TUnboundMemo
         Cursor = crArrow
         Left = 0
@@ -507,7 +553,7 @@ object MainForm: TMainForm
         Width = 675
         Align = alClient
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -24
         Font.Name = 'Tahoma'
         HideSelection = False
         OnContextPopup = MemoContextPopup
@@ -522,30 +568,36 @@ object MainForm: TMainForm
     end
   end
   object Splitter: TSplitter
-    Left = 195
-    Height = 327
-    Top = 32
-    Width = 5
+    Left = 292
+    Height = 490
+    Top = 47
+    Width = 8
   end
   object Ruler: TPanel
     Left = 0
-    Height = 2
-    Top = 30
-    Width = 937
+    Height = 3
+    Top = 44
+    Width = 1406
     Align = alTop
     Alignment = taLeftJustify
     BevelOuter = bvNone
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 0
   end
   object Edit: TEdit
-    Left = 696
-    Height = 22
-    Top = 3
-    Width = 150
+    Left = 1044
+    Height = 33
+    Top = 4
+    Width = 225
     AutoSize = False
     Color = clWhite
     DoubleBuffered = True
-    Font.Height = 15
+    Font.Height = 23
     OnKeyDown = EditKeyDown
     ParentDoubleBuffered = False
     ParentFont = False
@@ -553,8 +605,8 @@ object MainForm: TMainForm
   end
   object MainMenu: TMainMenu
     Images = Images
-    Left = 400
-    Top = 216
+    Left = 600
+    Top = 324
     object miTools: TMenuItem
       Caption = '&Tools'
       object miSearch: TMenuItem
@@ -712,8 +764,8 @@ object MainForm: TMainForm
     end
   end
   object Images: TImageList
-    Left = 320
-    Top = 104
+    Left = 480
+    Top = 156
     Bitmap = {
       4C692D0000001000000010000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
@@ -2161,8 +2213,8 @@ object MainForm: TMainForm
   object PopupMenu: TPopupMenu
     Images = Images
     OnPopup = PopupMenuPopup
-    Left = 400
-    Top = 160
+    Left = 600
+    Top = 240
     object pmSearchfor: TMenuItem
       Action = ActionSearchfor
       AutoCheck = True
@@ -2235,8 +2287,8 @@ object MainForm: TMainForm
   end
   object ActionList: TActionList
     Images = Images
-    Left = 400
-    Top = 104
+    Left = 600
+    Top = 156
     object ActionAbout: THelpAction
       Category = 'Tools'
       Caption = 'CmdAbout'
@@ -2516,36 +2568,36 @@ object MainForm: TMainForm
   end
   object OpenDialog: TOpenDialog
     Filter = 'Rich Text Files (*.rtf)|*.rtf'
-    Left = 240
-    Top = 104
+    Left = 360
+    Top = 156
   end
   object FontDialog: TFontDialog
     MinFontSize = 0
     MaxFontSize = 0
-    Left = 240
-    Top = 160
+    Left = 360
+    Top = 240
   end
   object SaveDialog: TSaveDialog
     Filter = 'Rich Text Files (*.rtf)|*.rtf'
     Options = [ofHideReadOnly, ofEnableSizing, ofViewDetail]
-    Left = 320
-    Top = 216
+    Left = 480
+    Top = 324
   end
   object FontDialogNotes: TFontDialog
     MinFontSize = 0
     MaxFontSize = 0
-    Left = 240
-    Top = 216
+    Left = 360
+    Top = 324
   end
   object PrintDialog: TPrintDialog
     Collate = True
     Options = [poDisablePrintToFile]
-    Left = 320
-    Top = 160
+    Left = 480
+    Top = 240
   end
   object IdleTimer: TIdleTimer
     OnTimer = IdleTimerTimer
-    Left = 472
-    Top = 104
+    Left = 708
+    Top = 156
   end
 end

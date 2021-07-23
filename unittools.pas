@@ -7,7 +7,7 @@ uses SysUtils, Classes, Controls, Graphics, ClipBrd, LazUtf8, IniFiles, UnitLib,
 
 type
   TCopyOptions = record
-    cvAbbreviate, cvEnumerated, cvGuillemets, cvParentheses, cvEnd : boolean;
+    cvAbbreviate, cvEnumerated, cvGuillemets, cvParentheses, cvEnd, cvCopyNoFormat, cvNewLine : boolean;
   end;
 
   TTools = class
@@ -224,6 +224,7 @@ var
   line, link, n : string;
   number : integer;
   l : boolean = False;
+  linkDelim : string = ' ';
 begin
   if CurrBible.RightToLeft then Result := '<rtl>' else Result := '';
 
@@ -253,8 +254,9 @@ begin
 
   link := CurrBible.VerseToStr(CurrVerse, not Options.cvAbbreviate);
   link := '<l>' + link + '</l>';
+  if Options.cvNewLine then linkDelim := '<br>' else linkDelim := ' ';
   if Options.cvParentheses then link := '(' + link + ')';
-  if Options.cvEnd then quote := quote + ' '+ link else quote := link + ' ' + quote;
+  if Options.cvEnd then quote := quote + linkDelim + link else quote := link + linkDelim + quote;
 
   Result += quote + '<br> ';
 end;

@@ -1,23 +1,25 @@
 object CopyForm: TCopyForm
   Left = 738
-  Height = 321
+  Height = 482
   Top = 302
-  Width = 416
+  Width = 836
   BorderStyle = bsDialog
   Caption = 'Copy Verses'
-  ClientHeight = 321
-  ClientWidth = 416
+  ClientHeight = 482
+  ClientWidth = 836
+  DesignTimePPI = 144
   OnActivate = FormActivate
   OnClose = FormClose
   Position = poScreenCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.12.0'
   object Memo: TUnboundMemo
     Cursor = crArrow
-    Left = 8
-    Height = 180
-    Top = 8
-    Width = 400
-    Font.Height = -16
+    Left = 12
+    Height = 270
+    Top = 12
+    Width = 808
+    Font.Height = -24
+    Font.Name = 'Tahoma'
     HideSelection = True
     ParentFont = False
     ReadOnly = True
@@ -26,23 +28,24 @@ object CopyForm: TCopyForm
     ZoomFactor = 1
   end
   object ButtonCopy: TButton
-    Left = 296
-    Height = 25
-    Top = 216
-    Width = 90
+    Left = 685
+    Height = 35
+    Top = 320
+    Width = 135
     AutoSize = True
     Caption = 'Copy'
-    Constraints.MaxWidth = 90
-    Constraints.MinWidth = 90
+    Constraints.MaxWidth = 135
+    Constraints.MinWidth = 135
     ModalResult = 1
     OnClick = ButtonCopyClick
+    ParentFont = False
     TabOrder = 1
   end
   object CheckGroup: TCheckGroup
-    Left = 8
-    Height = 120
-    Top = 192
-    Width = 259
+    Left = 12
+    Height = 180
+    Top = 288
+    Width = 660
     AutoFill = True
     Caption = ' Options '
     ChildSizing.LeftRightSpacing = 6
@@ -52,40 +55,46 @@ object CopyForm: TCopyForm
     ChildSizing.ShrinkHorizontal = crsScaleChilds
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 1
-    ClientHeight = 100
-    ClientWidth = 255
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 150
+    ClientWidth = 656
+    Columns = 2
     Items.Strings = (
       'Abbreviate book names'
       'Enumerated'
       'Guillemets'
       'Parentheses'
       'Link in the end'
+      'Link in the new line'
+      'Copy without formatting'
     )
     OnItemClick = CheckGroupItemClick
+    ParentFont = False
     TabOrder = 2
     Data = {
-      050000000202020202
+      0700000002020202020202
     }
   end
   object ButtonCancel: TButton
-    Left = 296
-    Height = 25
-    Top = 272
-    Width = 90
+    Left = 685
+    Height = 35
+    Top = 404
+    Width = 135
     AutoSize = True
     Caption = 'Cancel'
-    Constraints.MaxWidth = 90
-    Constraints.MinWidth = 90
+    Constraints.MaxWidth = 135
+    Constraints.MinWidth = 135
     ModalResult = 2
+    ParentFont = False
     TabOrder = 3
   end
   object CheckBox: TCheckBox
-    Left = 168
-    Height = 19
-    Top = 285
-    Width = 76
+    Left = 536
+    Height = 29
+    Top = 432
+    Width = 115
     Caption = 'Set default'
+    ParentFont = False
     TabOrder = 4
   end
 end

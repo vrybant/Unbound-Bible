@@ -43,6 +43,8 @@ const
   cgGuillemets  = 2;
   cgParentheses = 3;
   cgEnd         = 4;
+  cgNewLine     = 5;
+  cgCopyNoFormat= 6;
 
 {$R *.lfm}
 
@@ -59,6 +61,8 @@ begin
   CheckGroup.Items[cgGuillemets]  := T('Guillemets'      );
   CheckGroup.Items[cgParentheses] := T('Parentheses'     );
   CheckGroup.Items[cgEnd]         := T('Link in the end' );
+  CheckGroup.Items[cgNewLine]     := T('Link in new line' );
+  CheckGroup.Items[cgCopyNoFormat]:= T('Copy without formatting' );
 
   CheckBox.Caption := T('Set Default');
 end;
@@ -78,6 +82,8 @@ begin
   CheckGroup.Checked[cgGuillemets]  := Options.cvGuillemets;
   CheckGroup.Checked[cgParentheses] := Options.cvParentheses;
   CheckGroup.Checked[cgEnd]         := Options.cvEnd;
+  CheckGroup.Checked[cgNewLine]     := Options.cvNewLine;
+  CheckGroup.Checked[cgCopyNoFormat]:= Options.cvCopyNoFormat;
 
   CheckBox.Checked:= False;
 
@@ -90,11 +96,24 @@ begin
 end;
 
 procedure TCopyForm.CopyToClipboard;
+var
+  MemoCopy    : TMemo;
 begin
   Memo.SelectAll;
   Memo.CopyToClipboard;
   Memo.SelStart  := 0;
   Memo.SelLength := 0;
+  if CheckGroup.Checked[cgCopyNoFormat] then
+   begin
+      MemoCopy := TMemo.Create(self);
+      MemoCopy.Parent := CopyForm;
+      MemoCopy.Visible:= false;
+      MemoCopy.Clear;
+      MemoCopy.PasteFromClipboard;
+      MemoCopy.SelectAll;
+      MemoCopy.CopyToClipboard;
+      MemoCopy.FreeOnRelease;
+   end;
 end;
 
 procedure TCopyForm.CheckGroupItemClick(Sender: TObject; Index: integer);
@@ -104,6 +123,8 @@ begin
   Options.cvGuillemets  := CheckGroup.Checked[cgGuillemets];
   Options.cvParentheses := CheckGroup.Checked[cgParentheses];
   Options.cvEnd         := CheckGroup.Checked[cgEnd];
+  Options.cvNewLine     := CheckGroup.Checked[cgNewLine];
+  Options.cvCopyNoFormat:= CheckGroup.Checked[cgCopyNoFormat];
   LoadText;
   Repaint;
 end;

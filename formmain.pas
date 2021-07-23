@@ -1438,8 +1438,31 @@ end;
 
 {$ifdef windows}
 procedure TMainForm.VersesToClipboard;
+var
+  MemoPreview : TUnboundMemo;
+  MemoCopy    : TMemo;
 begin
   RichTextToClipboard(ParseWin(Tools.Get_Verses, Font), RemoveTags(Tools.Get_Verses));
+  if Options.cvCopyNoFormat then
+    begin
+       MemoPreview := TUnboundMemo.Create(self);
+      MemoPreview.Parent := MainForm;
+      MemoPreview.Font.Assign(Font);
+      MemoPreview.LoadText(Tools.Get_Verses);
+      MemoPreview.SelectAll;
+      MemoPreview.CopyToClipboard;
+      MemoPreview.Visible := false;
+      MemoPreview.FreeOnRelease;
+
+      MemoCopy := TMemo.Create(self);
+      MemoCopy.Parent := MainForm;
+      MemoCopy.Visible:= false;
+      MemoCopy.Clear;
+      MemoCopy.PasteFromClipboard;
+      MemoCopy.SelectAll;
+      MemoCopy.CopyToClipboard;
+      MemoCopy.FreeOnRelease;
+    end;
 end;
 {$endif}
 
@@ -1447,6 +1470,7 @@ end;
 procedure TMainForm.VersesToClipboard;
 var
   MemoPreview : TUnboundMemo;
+  MemoCopy    : TMemo;
 begin
   MemoPreview := TUnboundMemo.Create(self);
   MemoPreview.Parent := MainForm;
@@ -1456,6 +1480,17 @@ begin
   MemoPreview.CopyToClipboard;
   MemoPreview.Visible := false;
   MemoPreview.FreeOnRelease;
+  if Options.cvCopyNoFormat then
+     begin
+      MemoCopy := TMemo.Create(self);
+      MemoCopy.Parent := MainForm;
+      MemoCopy.Visible:= false;
+      MemoCopy.Clear;
+      MemoCopy.PasteFromClipboard;
+      MemoCopy.SelectAll;
+      MemoCopy.CopyToClipboard;
+      MemoCopy.FreeOnRelease;
+    end;
 end;
 {$endif}
 
@@ -1494,6 +1529,8 @@ begin
   IniFile.WriteBool('Options', 'Guillemets', Options.cvGuillemets);
   IniFile.WriteBool('Options', 'Parentheses', Options.cvParentheses);
   IniFile.WriteBool('Options', 'End', Options.cvEnd);
+  IniFile.WriteBool('Options', 'NewLine', Options.cvNewLine);
+  IniFile.WriteBool('Options', 'CopyNoFormat', Options.cvCopyNoFormat);
   IniFile.WriteInteger('Recent', 'Count', RecentList.Count);
 
   for item in RecentList do
@@ -1524,6 +1561,8 @@ begin
   Options.cvGuillemets := IniFile.ReadBool('Options', 'Guillemets', False);
   Options.cvParentheses := IniFile.ReadBool('Options', 'Parentheses', False);
   Options.cvEnd := IniFile.ReadBool('Options', 'End', False);
+  Options.cvNewLine := IniFile.ReadBool('Options', 'NewLine', False);
+  Options.cvCopyNoFormat := IniFile.ReadBool('Options', 'CopyNoFormat', False);
   Max := IniFile.ReadInteger('Recent', 'Count', RecentList.Count);
 
   for i := 0 to Max - 1 do
